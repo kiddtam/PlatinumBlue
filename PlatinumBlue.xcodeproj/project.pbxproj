@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		624F6265498DFB9EA602E054 /* Pods_PlatinumBlue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B0775FFAAA5F9C24ECEFD6 /* Pods_PlatinumBlue.framework */; };
+		ABCBDC711C1706A500242D53 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCBDC701C1706A500242D53 /* libxml2.2.tbd */; };
+		ABCBDC731C1706AE00242D53 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCBDC721C1706AE00242D53 /* libxml2.tbd */; };
+		ABCBDC751C171CF400242D53 /* FeedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCBDC741C171CF400242D53 /* FeedInfo.swift */; };
+		ABCBDC771C171D0200242D53 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCBDC761C171D0200242D53 /* FeedItem.swift */; };
+		ABCF40131C15B7530046271E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF40121C15B7530046271E /* AppDelegate.swift */; };
+		ABCF40151C15B7530046271E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF40141C15B7530046271E /* ViewController.swift */; };
+		ABCF40181C15B7530046271E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCF40161C15B7530046271E /* Main.storyboard */; };
+		ABCF401A1C15B7530046271E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABCF40191C15B7530046271E /* Assets.xcassets */; };
+		ABCF401D1C15B7530046271E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCF401B1C15B7530046271E /* LaunchScreen.storyboard */; };
+		ABCF40281C15B7540046271E /* PlatinumBlueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF40271C15B7540046271E /* PlatinumBlueTests.swift */; };
+		ABCF40331C15B7540046271E /* PlatinumBlueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF40321C15B7540046271E /* PlatinumBlueUITests.swift */; };
+		ABCF40421C15B8D90046271E /* PlatinumBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF40411C15B8D90046271E /* PlatinumBlue.swift */; };
+		ABF501081C15C3C1003DA0ED /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABF500D41C15C3C0003DA0ED /* Info.plist */; };
+		ABF501091C15C3C1003DA0ED /* Ji.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF501051C15C3C1003DA0ED /* Ji.swift */; };
+		ABF5010A1C15C3C1003DA0ED /* JiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF501061C15C3C1003DA0ED /* JiHelper.swift */; };
+		ABF5010B1C15C3C1003DA0ED /* JiNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF501071C15C3C1003DA0ED /* JiNode.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABCF40241C15B7540046271E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABCF40071C15B7530046271E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABCF400E1C15B7530046271E;
+			remoteInfo = PlatinumBlue;
+		};
+		ABCF402F1C15B7540046271E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABCF40071C15B7530046271E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABCF400E1C15B7530046271E;
+			remoteInfo = PlatinumBlue;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		578B8C9FCF42A4D8B800BA25 /* Pods-PlatinumBlue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlatinumBlue.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlatinumBlue/Pods-PlatinumBlue.release.xcconfig"; sourceTree = "<group>"; };
+		ABCBDC701C1706A500242D53 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		ABCBDC721C1706AE00242D53 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		ABCBDC741C171CF400242D53 /* FeedInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedInfo.swift; path = Class/FeedInfo.swift; sourceTree = "<group>"; };
+		ABCBDC761C171D0200242D53 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItem.swift; path = Class/FeedItem.swift; sourceTree = "<group>"; };
+		ABCF400F1C15B7530046271E /* PlatinumBlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlatinumBlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABCF40121C15B7530046271E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ABCF40141C15B7530046271E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ABCF40171C15B7530046271E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ABCF40191C15B7530046271E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ABCF401C1C15B7530046271E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ABCF401E1C15B7530046271E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABCF40231C15B7540046271E /* PlatinumBlueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlatinumBlueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABCF40271C15B7540046271E /* PlatinumBlueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatinumBlueTests.swift; sourceTree = "<group>"; };
+		ABCF40291C15B7540046271E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABCF402E1C15B7540046271E /* PlatinumBlueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlatinumBlueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABCF40321C15B7540046271E /* PlatinumBlueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatinumBlueUITests.swift; sourceTree = "<group>"; };
+		ABCF40341C15B7540046271E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABCF40411C15B8D90046271E /* PlatinumBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlatinumBlue.swift; path = Class/PlatinumBlue.swift; sourceTree = "<group>"; };
+		ABCF40431C15C04A0046271E /* PlatinumBlue-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlatinumBlue-Bridging-Header.h"; sourceTree = "<group>"; };
+		ABF500D41C15C3C0003DA0ED /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABF500D61C15C3C0003DA0ED /* c14n.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c14n.h; sourceTree = "<group>"; };
+		ABF500D71C15C3C0003DA0ED /* catalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = catalog.h; sourceTree = "<group>"; };
+		ABF500D81C15C3C0003DA0ED /* chvalid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chvalid.h; sourceTree = "<group>"; };
+		ABF500D91C15C3C0003DA0ED /* debugXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debugXML.h; sourceTree = "<group>"; };
+		ABF500DA1C15C3C0003DA0ED /* dict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dict.h; sourceTree = "<group>"; };
+		ABF500DB1C15C3C0003DA0ED /* encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = encoding.h; sourceTree = "<group>"; };
+		ABF500DC1C15C3C0003DA0ED /* entities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entities.h; sourceTree = "<group>"; };
+		ABF500DD1C15C3C0003DA0ED /* globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
+		ABF500DE1C15C3C0003DA0ED /* hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hash.h; sourceTree = "<group>"; };
+		ABF500DF1C15C3C0003DA0ED /* HTMLparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLparser.h; sourceTree = "<group>"; };
+		ABF500E01C15C3C0003DA0ED /* HTMLtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLtree.h; sourceTree = "<group>"; };
+		ABF500E11C15C3C0003DA0ED /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
+		ABF500E21C15C3C0003DA0ED /* nanoftp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanoftp.h; sourceTree = "<group>"; };
+		ABF500E31C15C3C0003DA0ED /* nanohttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanohttp.h; sourceTree = "<group>"; };
+		ABF500E41C15C3C0003DA0ED /* parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parser.h; sourceTree = "<group>"; };
+		ABF500E51C15C3C0003DA0ED /* parserInternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parserInternals.h; sourceTree = "<group>"; };
+		ABF500E61C15C3C0003DA0ED /* pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pattern.h; sourceTree = "<group>"; };
+		ABF500E71C15C3C0003DA0ED /* relaxng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = relaxng.h; sourceTree = "<group>"; };
+		ABF500E81C15C3C0003DA0ED /* SAX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAX.h; sourceTree = "<group>"; };
+		ABF500E91C15C3C0003DA0ED /* SAX2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAX2.h; sourceTree = "<group>"; };
+		ABF500EA1C15C3C0003DA0ED /* schemasInternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = schemasInternals.h; sourceTree = "<group>"; };
+		ABF500EB1C15C3C0003DA0ED /* schematron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = schematron.h; sourceTree = "<group>"; };
+		ABF500EC1C15C3C0003DA0ED /* threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = threads.h; sourceTree = "<group>"; };
+		ABF500ED1C15C3C1003DA0ED /* tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tree.h; sourceTree = "<group>"; };
+		ABF500EE1C15C3C1003DA0ED /* uri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uri.h; sourceTree = "<group>"; };
+		ABF500EF1C15C3C1003DA0ED /* valid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = valid.h; sourceTree = "<group>"; };
+		ABF500F01C15C3C1003DA0ED /* xinclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xinclude.h; sourceTree = "<group>"; };
+		ABF500F11C15C3C1003DA0ED /* xlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xlink.h; sourceTree = "<group>"; };
+		ABF500F21C15C3C1003DA0ED /* xmlautomata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlautomata.h; sourceTree = "<group>"; };
+		ABF500F31C15C3C1003DA0ED /* xmlerror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlerror.h; sourceTree = "<group>"; };
+		ABF500F41C15C3C1003DA0ED /* xmlexports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlexports.h; sourceTree = "<group>"; };
+		ABF500F51C15C3C1003DA0ED /* xmlIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlIO.h; sourceTree = "<group>"; };
+		ABF500F61C15C3C1003DA0ED /* xmlmemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlmemory.h; sourceTree = "<group>"; };
+		ABF500F71C15C3C1003DA0ED /* xmlmodule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlmodule.h; sourceTree = "<group>"; };
+		ABF500F81C15C3C1003DA0ED /* xmlreader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlreader.h; sourceTree = "<group>"; };
+		ABF500F91C15C3C1003DA0ED /* xmlregexp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlregexp.h; sourceTree = "<group>"; };
+		ABF500FA1C15C3C1003DA0ED /* xmlsave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlsave.h; sourceTree = "<group>"; };
+		ABF500FB1C15C3C1003DA0ED /* xmlschemas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlschemas.h; sourceTree = "<group>"; };
+		ABF500FC1C15C3C1003DA0ED /* xmlschemastypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlschemastypes.h; sourceTree = "<group>"; };
+		ABF500FD1C15C3C1003DA0ED /* xmlstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlstring.h; sourceTree = "<group>"; };
+		ABF500FE1C15C3C1003DA0ED /* xmlunicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlunicode.h; sourceTree = "<group>"; };
+		ABF500FF1C15C3C1003DA0ED /* xmlversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlversion.h; sourceTree = "<group>"; };
+		ABF501001C15C3C1003DA0ED /* xmlwriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlwriter.h; sourceTree = "<group>"; };
+		ABF501011C15C3C1003DA0ED /* xpath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xpath.h; sourceTree = "<group>"; };
+		ABF501021C15C3C1003DA0ED /* xpathInternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xpathInternals.h; sourceTree = "<group>"; };
+		ABF501031C15C3C1003DA0ED /* xpointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xpointer.h; sourceTree = "<group>"; };
+		ABF501041C15C3C1003DA0ED /* Ji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ji.h; sourceTree = "<group>"; };
+		ABF501051C15C3C1003DA0ED /* Ji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ji.swift; sourceTree = "<group>"; };
+		ABF501061C15C3C1003DA0ED /* JiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiHelper.swift; sourceTree = "<group>"; };
+		ABF501071C15C3C1003DA0ED /* JiNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiNode.swift; sourceTree = "<group>"; };
+		C4128D2D35510AC034A7C439 /* Pods-PlatinumBlue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlatinumBlue.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlatinumBlue/Pods-PlatinumBlue.debug.xcconfig"; sourceTree = "<group>"; };
+		E8B0775FFAAA5F9C24ECEFD6 /* Pods_PlatinumBlue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlatinumBlue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ABCF400C1C15B7530046271E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABCBDC731C1706AE00242D53 /* libxml2.tbd in Frameworks */,
+				ABCBDC711C1706A500242D53 /* libxml2.2.tbd in Frameworks */,
+				624F6265498DFB9EA602E054 /* Pods_PlatinumBlue.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABCF40201C15B7540046271E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABCF402B1C15B7540046271E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3ADD1052BDC97F73641031A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4128D2D35510AC034A7C439 /* Pods-PlatinumBlue.debug.xcconfig */,
+				578B8C9FCF42A4D8B800BA25 /* Pods-PlatinumBlue.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A4E57508E592BC618808E29E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABCBDC721C1706AE00242D53 /* libxml2.tbd */,
+				ABCBDC701C1706A500242D53 /* libxml2.2.tbd */,
+				E8B0775FFAAA5F9C24ECEFD6 /* Pods_PlatinumBlue.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABCF40061C15B7530046271E = {
+			isa = PBXGroup;
+			children = (
+				ABCF40111C15B7530046271E /* PlatinumBlue */,
+				ABCF40261C15B7540046271E /* PlatinumBlueTests */,
+				ABCF40311C15B7540046271E /* PlatinumBlueUITests */,
+				ABCF40101C15B7530046271E /* Products */,
+				3ADD1052BDC97F73641031A9 /* Pods */,
+				A4E57508E592BC618808E29E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ABCF40101C15B7530046271E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABCF400F1C15B7530046271E /* PlatinumBlue.app */,
+				ABCF40231C15B7540046271E /* PlatinumBlueTests.xctest */,
+				ABCF402E1C15B7540046271E /* PlatinumBlueUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABCF40111C15B7530046271E /* PlatinumBlue */ = {
+			isa = PBXGroup;
+			children = (
+				ABF500D31C15C3C0003DA0ED /* Source */,
+				ABCF40401C15B8BA0046271E /* Class */,
+				ABCF40121C15B7530046271E /* AppDelegate.swift */,
+				ABCF40141C15B7530046271E /* ViewController.swift */,
+				ABCF40161C15B7530046271E /* Main.storyboard */,
+				ABCF40191C15B7530046271E /* Assets.xcassets */,
+				ABCF401B1C15B7530046271E /* LaunchScreen.storyboard */,
+				ABCF40431C15C04A0046271E /* PlatinumBlue-Bridging-Header.h */,
+				ABCF401E1C15B7530046271E /* Info.plist */,
+			);
+			path = PlatinumBlue;
+			sourceTree = "<group>";
+		};
+		ABCF40261C15B7540046271E /* PlatinumBlueTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABCF40271C15B7540046271E /* PlatinumBlueTests.swift */,
+				ABCF40291C15B7540046271E /* Info.plist */,
+			);
+			path = PlatinumBlueTests;
+			sourceTree = "<group>";
+		};
+		ABCF40311C15B7540046271E /* PlatinumBlueUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ABCF40321C15B7540046271E /* PlatinumBlueUITests.swift */,
+				ABCF40341C15B7540046271E /* Info.plist */,
+			);
+			path = PlatinumBlueUITests;
+			sourceTree = "<group>";
+		};
+		ABCF40401C15B8BA0046271E /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				ABCF40411C15B8D90046271E /* PlatinumBlue.swift */,
+				ABCBDC741C171CF400242D53 /* FeedInfo.swift */,
+				ABCBDC761C171D0200242D53 /* FeedItem.swift */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		ABF500D31C15C3C0003DA0ED /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				ABF500D41C15C3C0003DA0ED /* Info.plist */,
+				ABF500D51C15C3C0003DA0ED /* Ji-libxml */,
+				ABF501041C15C3C1003DA0ED /* Ji.h */,
+				ABF501051C15C3C1003DA0ED /* Ji.swift */,
+				ABF501061C15C3C1003DA0ED /* JiHelper.swift */,
+				ABF501071C15C3C1003DA0ED /* JiNode.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		ABF500D51C15C3C0003DA0ED /* Ji-libxml */ = {
+			isa = PBXGroup;
+			children = (
+				ABF500D61C15C3C0003DA0ED /* c14n.h */,
+				ABF500D71C15C3C0003DA0ED /* catalog.h */,
+				ABF500D81C15C3C0003DA0ED /* chvalid.h */,
+				ABF500D91C15C3C0003DA0ED /* debugXML.h */,
+				ABF500DA1C15C3C0003DA0ED /* dict.h */,
+				ABF500DB1C15C3C0003DA0ED /* encoding.h */,
+				ABF500DC1C15C3C0003DA0ED /* entities.h */,
+				ABF500DD1C15C3C0003DA0ED /* globals.h */,
+				ABF500DE1C15C3C0003DA0ED /* hash.h */,
+				ABF500DF1C15C3C0003DA0ED /* HTMLparser.h */,
+				ABF500E01C15C3C0003DA0ED /* HTMLtree.h */,
+				ABF500E11C15C3C0003DA0ED /* list.h */,
+				ABF500E21C15C3C0003DA0ED /* nanoftp.h */,
+				ABF500E31C15C3C0003DA0ED /* nanohttp.h */,
+				ABF500E41C15C3C0003DA0ED /* parser.h */,
+				ABF500E51C15C3C0003DA0ED /* parserInternals.h */,
+				ABF500E61C15C3C0003DA0ED /* pattern.h */,
+				ABF500E71C15C3C0003DA0ED /* relaxng.h */,
+				ABF500E81C15C3C0003DA0ED /* SAX.h */,
+				ABF500E91C15C3C0003DA0ED /* SAX2.h */,
+				ABF500EA1C15C3C0003DA0ED /* schemasInternals.h */,
+				ABF500EB1C15C3C0003DA0ED /* schematron.h */,
+				ABF500EC1C15C3C0003DA0ED /* threads.h */,
+				ABF500ED1C15C3C1003DA0ED /* tree.h */,
+				ABF500EE1C15C3C1003DA0ED /* uri.h */,
+				ABF500EF1C15C3C1003DA0ED /* valid.h */,
+				ABF500F01C15C3C1003DA0ED /* xinclude.h */,
+				ABF500F11C15C3C1003DA0ED /* xlink.h */,
+				ABF500F21C15C3C1003DA0ED /* xmlautomata.h */,
+				ABF500F31C15C3C1003DA0ED /* xmlerror.h */,
+				ABF500F41C15C3C1003DA0ED /* xmlexports.h */,
+				ABF500F51C15C3C1003DA0ED /* xmlIO.h */,
+				ABF500F61C15C3C1003DA0ED /* xmlmemory.h */,
+				ABF500F71C15C3C1003DA0ED /* xmlmodule.h */,
+				ABF500F81C15C3C1003DA0ED /* xmlreader.h */,
+				ABF500F91C15C3C1003DA0ED /* xmlregexp.h */,
+				ABF500FA1C15C3C1003DA0ED /* xmlsave.h */,
+				ABF500FB1C15C3C1003DA0ED /* xmlschemas.h */,
+				ABF500FC1C15C3C1003DA0ED /* xmlschemastypes.h */,
+				ABF500FD1C15C3C1003DA0ED /* xmlstring.h */,
+				ABF500FE1C15C3C1003DA0ED /* xmlunicode.h */,
+				ABF500FF1C15C3C1003DA0ED /* xmlversion.h */,
+				ABF501001C15C3C1003DA0ED /* xmlwriter.h */,
+				ABF501011C15C3C1003DA0ED /* xpath.h */,
+				ABF501021C15C3C1003DA0ED /* xpathInternals.h */,
+				ABF501031C15C3C1003DA0ED /* xpointer.h */,
+			);
+			path = "Ji-libxml";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ABCF400E1C15B7530046271E /* PlatinumBlue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABCF40371C15B7540046271E /* Build configuration list for PBXNativeTarget "PlatinumBlue" */;
+			buildPhases = (
+				ABCF400B1C15B7530046271E /* Sources */,
+				ABCF400C1C15B7530046271E /* Frameworks */,
+				ABCF400D1C15B7530046271E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlatinumBlue;
+			productName = PlatinumBlue;
+			productReference = ABCF400F1C15B7530046271E /* PlatinumBlue.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ABCF40221C15B7540046271E /* PlatinumBlueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABCF403A1C15B7540046271E /* Build configuration list for PBXNativeTarget "PlatinumBlueTests" */;
+			buildPhases = (
+				ABCF401F1C15B7540046271E /* Sources */,
+				ABCF40201C15B7540046271E /* Frameworks */,
+				ABCF40211C15B7540046271E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABCF40251C15B7540046271E /* PBXTargetDependency */,
+			);
+			name = PlatinumBlueTests;
+			productName = PlatinumBlueTests;
+			productReference = ABCF40231C15B7540046271E /* PlatinumBlueTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ABCF402D1C15B7540046271E /* PlatinumBlueUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABCF403D1C15B7540046271E /* Build configuration list for PBXNativeTarget "PlatinumBlueUITests" */;
+			buildPhases = (
+				ABCF402A1C15B7540046271E /* Sources */,
+				ABCF402B1C15B7540046271E /* Frameworks */,
+				ABCF402C1C15B7540046271E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABCF40301C15B7540046271E /* PBXTargetDependency */,
+			);
+			name = PlatinumBlueUITests;
+			productName = PlatinumBlueUITests;
+			productReference = ABCF402E1C15B7540046271E /* PlatinumBlueUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABCF40071C15B7530046271E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "林涛";
+				TargetAttributes = {
+					ABCF400E1C15B7530046271E = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					ABCF40221C15B7540046271E = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = ABCF400E1C15B7530046271E;
+					};
+					ABCF402D1C15B7540046271E = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = ABCF400E1C15B7530046271E;
+					};
+				};
+			};
+			buildConfigurationList = ABCF400A1C15B7530046271E /* Build configuration list for PBXProject "PlatinumBlue" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ABCF40061C15B7530046271E;
+			productRefGroup = ABCF40101C15B7530046271E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABCF400E1C15B7530046271E /* PlatinumBlue */,
+				ABCF40221C15B7540046271E /* PlatinumBlueTests */,
+				ABCF402D1C15B7540046271E /* PlatinumBlueUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ABCF400D1C15B7530046271E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABF501081C15C3C1003DA0ED /* Info.plist in Resources */,
+				ABCF401D1C15B7530046271E /* LaunchScreen.storyboard in Resources */,
+				ABCF401A1C15B7530046271E /* Assets.xcassets in Resources */,
+				ABCF40181C15B7530046271E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABCF40211C15B7540046271E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABCF402C1C15B7540046271E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ABCF400B1C15B7530046271E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABCF40151C15B7530046271E /* ViewController.swift in Sources */,
+				ABCBDC751C171CF400242D53 /* FeedInfo.swift in Sources */,
+				ABCF40131C15B7530046271E /* AppDelegate.swift in Sources */,
+				ABF501091C15C3C1003DA0ED /* Ji.swift in Sources */,
+				ABCBDC771C171D0200242D53 /* FeedItem.swift in Sources */,
+				ABF5010A1C15C3C1003DA0ED /* JiHelper.swift in Sources */,
+				ABF5010B1C15C3C1003DA0ED /* JiNode.swift in Sources */,
+				ABCF40421C15B8D90046271E /* PlatinumBlue.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABCF401F1C15B7540046271E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABCF40281C15B7540046271E /* PlatinumBlueTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABCF402A1C15B7540046271E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABCF40331C15B7540046271E /* PlatinumBlueUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABCF40251C15B7540046271E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABCF400E1C15B7530046271E /* PlatinumBlue */;
+			targetProxy = ABCF40241C15B7540046271E /* PBXContainerItemProxy */;
+		};
+		ABCF40301C15B7540046271E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABCF400E1C15B7530046271E /* PlatinumBlue */;
+			targetProxy = ABCF402F1C15B7540046271E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ABCF40161C15B7530046271E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABCF40171C15B7530046271E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ABCF401B1C15B7530046271E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABCF401C1C15B7530046271E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ABCF40351C15B7540046271E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ABCF40361C15B7540046271E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ABCF40381C15B7540046271E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4128D2D35510AC034A7C439 /* Pods-PlatinumBlue.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = PlatinumBlue/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OMG.PlatinumBlue;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlatinumBlue/PlatinumBlue-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ABCF40391C15B7540046271E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 578B8C9FCF42A4D8B800BA25 /* Pods-PlatinumBlue.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = PlatinumBlue/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OMG.PlatinumBlue;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlatinumBlue/PlatinumBlue-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		ABCF403B1C15B7540046271E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PlatinumBlueTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OMG.PlatinumBlueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlatinumBlue.app/PlatinumBlue";
+			};
+			name = Debug;
+		};
+		ABCF403C1C15B7540046271E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PlatinumBlueTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OMG.PlatinumBlueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlatinumBlue.app/PlatinumBlue";
+			};
+			name = Release;
+		};
+		ABCF403E1C15B7540046271E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PlatinumBlueUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OMG.PlatinumBlueUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PlatinumBlue;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		ABCF403F1C15B7540046271E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PlatinumBlueUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OMG.PlatinumBlueUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PlatinumBlue;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ABCF400A1C15B7530046271E /* Build configuration list for PBXProject "PlatinumBlue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABCF40351C15B7540046271E /* Debug */,
+				ABCF40361C15B7540046271E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABCF40371C15B7540046271E /* Build configuration list for PBXNativeTarget "PlatinumBlue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABCF40381C15B7540046271E /* Debug */,
+				ABCF40391C15B7540046271E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABCF403A1C15B7540046271E /* Build configuration list for PBXNativeTarget "PlatinumBlueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABCF403B1C15B7540046271E /* Debug */,
+				ABCF403C1C15B7540046271E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABCF403D1C15B7540046271E /* Build configuration list for PBXNativeTarget "PlatinumBlueUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABCF403E1C15B7540046271E /* Debug */,
+				ABCF403F1C15B7540046271E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ABCF40071C15B7530046271E /* Project object */;
+}
