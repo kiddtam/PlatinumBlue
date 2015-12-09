@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedItem: NSObject {
+class FeedItem {
  /// 规定项目作者的电子邮件地址。
     var author : String?
  /// 定义项目所属的一个或多个类别
@@ -30,6 +30,60 @@ class FeedItem: NSObject {
     var Source : String?
  /// 定义此项目的标题
     var title : String?
-   
+    
+ /// atom content
+    var content : String?
+ /// atom summary
+    var summary : String?
+ /// atom  updated
+    var updated : String?
+    
+    func description() -> String {
+        return "\(self.toDictionary())"
+    }
+    
+    func toDictionary()-> NSDictionary {
+        let dictionary = NSMutableDictionary()
+        if author != nil{
+            dictionary["author"] = author
+        }
+        if category != nil{
+            dictionary["category"] = category
+        }
+        if comments != nil{
+            dictionary["comments"] = comments
+        }
+        if feedItemDescription != nil{
+            dictionary["feedItemDescription"] = feedItemDescription
+        }
+        if enclosure != nil{
+            dictionary["enclosure"] = enclosure
+        }
+        if link != nil{
+            dictionary["link"] = link
+        }
+        
+        if pubDate != nil{
+            dictionary["pubDate"] = pubDate
+        }
+        if Source != nil{
+            dictionary["Source"] = Source
+        }
+        if title != nil{
+            dictionary["title"] = title
+        }
+        if content != nil{
+            dictionary["content"] = content
+        }
+        if summary != nil{
+            dictionary["summary"] = summary
+        }
+        if updated != nil{
+            dictionary["updated"] = updated
+        }
+        
+        return dictionary
+    }
+
     
 }

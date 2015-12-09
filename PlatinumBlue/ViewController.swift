@@ -12,8 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bule = PlatinumBlue(urlStr: "http://nshipster.cn/feed.xml")
-        bule.parse()
+        let bule = PlatinumBlue(urlStr: "http://beyondvincent.com/atom.xml")
+        bule.parse { (feedInfo : FeedInfo?, feedItems :[FeedItem]?, error : NSError?) -> Void in
+            print("\(feedInfo?.description())")
+            
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 

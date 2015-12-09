@@ -10,22 +10,47 @@ import UIKit
 
 class PlatinumBlue: NSObject,NSURLSessionDelegate {
     
+    enum ParseType {
+        case ParseTypeFull
+        case ParseTypeItemsOnly
+        case ParseTypeInfoOnly
+    }
+    
+    enum FeedType {
+        case FeedTypeUnknown
+        case FeedTypeRSS
+        case FeedTypeRSS1
+        case FeedTypeAtom
+    }
+    
+    let ErrorCodeNotInitiated = 2040
+    let ErrorCodeConnectionFailed = 2041
+    let ErrorCodeFeedParsingError = 2042
+    let ErrorCodeFeedValidationError = 2043
+    var feedType:FeedType = .FeedTypeUnknown
+    
     private var request:NSURLRequest
     private var URL:NSURL
     
-    var feedInfo:FeedInfo?
+    var feedInfo : FeedInfo?
     var feedItems = [FeedItem]()
+    var parsing:Bool = false
     
     init(url :NSURL) {
         let request = NSMutableURLRequest(URL: url, cachePolicy: .ReloadRevalidatingCacheData, timeoutInterval: 60)
         request.setValue("PlatinumBlue", forHTTPHeaderField: "User-Agent")
-       // request.HTTPMethod = "GET"
-        
         self.request = request
        
         self.URL = url
     }
  
+    /**
+     通过一个RSS源路径初始化PlatinumBlue
+     
+     - parameter urlStr: 源路径
+     
+     - returns:
+     */
     convenience init(urlStr :String) {
         
         print("Rss Web site is : \(urlStr)")
@@ -37,29 +62,31 @@ class PlatinumBlue: NSObject,NSURLSessionDelegate {
     }
    
     /**
-     `shape` 是测
-     :param: str
-     //!!!:
-     - returns:
+     解析源的xml数据，将channle和item的信息分别存在feedInfo 和feedItems数组中
+     
+     - parameter completionHandler: 解析完成后通过这个闭包返回channle和items里面的信息
+     
+     - returns: 解析成功或失败
      */
-    func parse()->Bool {
+    func parse(completionHandler: (FeedInfo?, [FeedItem]?, NSError?) -> Void)->Bool {
+        if self.parsing {
+            let userInfo = [NSLocalizedDescriptionKey:"Parsing error"]
+            let error = NSError(domain: "PlatinumBlue Parsing", code: ErrorCodeFeedParsingError, userInfo: userInfo)
+            
+            completionHandler(nil,nil,error)
+            
+            return false
+        }
+        
+        self.parsing = true
         //TODO: //FIXME:
-        self.sendRequest()
+        self.sendRequest(completionHandler)
         return true
     }
 
-    func sendRequest() {
-        /* Configure session, choose between:
-        * defaultSessionConfiguration
-        * ephemeralSessionConfiguration
-        * backgroundSessionConfigurationWithIdentifier:
-        And set session-wide properties, such as: HTTPAdditionalHeaders,
-        HTTPCookieAcceptPolicy, requestCachePolicy or timeoutIntervalForRequest.
-        */
-        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
-
+    func sendRequest(completionHandler: (FeedInfo?, [FeedItem]?, NSError?) -> Void) {
         
-        /* Create session, and optionally set a NSURLSessionDelegate. */
+        let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
 
         let task = session.dataTaskWithURL(self.URL) { (date: NSData?, response:NSURLResponse?,error:NSError?) -> Void in
@@ -67,7 +94,7 @@ class PlatinumBlue: NSObject,NSURLSessionDelegate {
                 print("\(error.localizedDescription)")
             }
             
-            self.startParsing(date, textEncodingName: response?.textEncodingName)
+            self.startParsing(date, textEncodingName: response?.textEncodingName,completionHandler: completionHandler)
         }
        
         task.resume()
@@ -75,62 +102,154 @@ class PlatinumBlue: NSObject,NSURLSessionDelegate {
 
     
 
-    func startParsing( data : NSData! ,textEncodingName : String?) {
+    func startParsing( data : NSData! ,textEncodingName : String?,completionHandler: (FeedInfo?, [FeedItem]?, NSError?) -> Void) {
         guard let _:NSData = data else {
             return
         }
-        
+        var parseData = data
         if textEncodingName?.lowercaseString != "utf-8" {
-            //data = self.convertUnknownEncoding(data, encodingName: textEncodingName!)
+            parseData = self.convertUnknownEncoding(data, encodingName: textEncodingName)
         }
         
-        if let data = data where data.length > 0 {
-            let xmlDoc = Ji(xmlData: data)
-            let channel = xmlDoc?.rootNode?.firstChildWithName("channel")
-            let children = channel?.childrenWithName("item")
+        if let parseData = parseData where parseData.length > 0 {
+            let xmlDoc = Ji(xmlData: parseData)
             
-            let feedInfo = FeedInfo()
-            feedInfo.title = channel?.firstChildWithName("title")?.content
-            feedInfo.feedDescription = channel?.firstChildWithName("description")?.content
-            feedInfo.link = channel?.firstChildWithName("link")?.content
-            feedInfo.language = channel?.firstChildWithName("language")?.content
-            feedInfo.lastBuildDate = channel?.firstChildWithName("lastBuildDate")?.content
-            feedInfo.pubDate = channel?.firstChildWithName("pubDate")?.content
-            feedInfo.copyright = channel?.firstChildWithName("copyright")?.content
-            feedInfo.webMaster = channel?.firstChildWithName("webMaster")?.content
-            feedInfo.managingEditor = channel?.firstChildWithName("managingEditor")?.content
-            
-            self.feedInfo = feedInfo
-            
-           
-            for node:JiNode in children! {
-                let feedItem = FeedItem()
-                feedItem.title = node.firstChildWithName("title")?.content
-                feedItem.feedItemDescription = node.firstChildWithName("description")?.content
-                feedItem.author = node.firstChildWithName("author")?.content
-                feedItem.pubDate = node.firstChildWithName("pubDate")?.content
-                feedItem.link = node.firstChildWithName("link")?.content
-                feedItem.guid = node.firstChildWithName("guid")?.content
-                feedItem.category = node.firstChildWithName("category")?.content
-                self.feedItems.append(feedItem)
+            if (xmlDoc == nil) {
+                let userInfo = [NSLocalizedDescriptionKey:"Can't Parse this feed \(self.URL)"]
+                
+                let error = NSError(domain: "PlatinumBlue Parsing", code: ErrorCodeFeedParsingError, userInfo: userInfo)
+                completionHandler(nil,nil,error)
             }
-             print("解析完成 \(self.feedItems))")
+            
+            if self.feedType == .FeedTypeUnknown {
+                switch xmlDoc!.rootNode!.tagName!.lowercaseString {
+                case "rss":
+                    self.feedType = .FeedTypeRSS
+                    self.convertRSSType(xmlDoc, completionHandler: completionHandler)
+                case "rdf:RDF":
+                    self.feedType = .FeedTypeRSS1
+                    self.convertRSS1Type(xmlDoc, completionHandler: completionHandler)
+                case "feed":
+                    self.feedType = .FeedTypeAtom
+                    self.convertAtomType(xmlDoc, completionHandler: completionHandler)
+                default:
+                    print("\(xmlDoc?.rootNode?.tagName)")
+                    let userInfo = [NSLocalizedDescriptionKey:"XML document is not a valid web feed document \n\(self.URL)"]
+                    let error = NSError(domain: "PlatinumBlue Parsing", code: ErrorCodeFeedParsingError, userInfo: userInfo)
+                    completionHandler(nil,nil,error)
+                }
+            }
+           
         } else {
             print("解析失败")
         }
-        
         //if data
-        
     }
     
-    func convertUnknownEncoding(data : NSData!,encodingName :String) ->NSData? {
-        var string:NSString?
+    func convertRSSType(xmlDoc : Ji! ,completionHandler: (FeedInfo?, [FeedItem]?, NSError?) -> Void) {
         
+        let channel = xmlDoc?.rootNode?.firstChildWithName("channel")
+        let children = channel?.childrenWithName("item")
+        
+        let feedInfo = FeedInfo()
+        feedInfo.title = channel?.firstChildWithName("title")?.content
+        feedInfo.feedDescription = channel?.firstChildWithName("description")?.content
+        feedInfo.link = channel?.firstChildWithName("link")?.content
+        feedInfo.language = channel?.firstChildWithName("language")?.content
+        feedInfo.lastBuildDate = channel?.firstChildWithName("lastBuildDate")?.content
+        feedInfo.pubDate = channel?.firstChildWithName("pubDate")?.content
+        feedInfo.copyright = channel?.firstChildWithName("copyright")?.content
+        feedInfo.webMaster = channel?.firstChildWithName("webMaster")?.content
+        feedInfo.managingEditor = channel?.firstChildWithName("managingEditor")?.content
+        
+        self.feedInfo = feedInfo
+        
+        for node:JiNode in children! {
+            let feedItem = FeedItem()
+            feedItem.title = node.firstChildWithName("title")?.content
+            feedItem.feedItemDescription = node.firstChildWithName("description")?.content
+            feedItem.author = node.firstChildWithName("author")?.content
+            feedItem.pubDate = node.firstChildWithName("pubDate")?.content
+            feedItem.link = node.firstChildWithName("link")?.content
+            feedItem.guid = node.firstChildWithName("guid")?.content
+            feedItem.category = node.firstChildWithName("category")?.content
+            self.feedItems.append(feedItem)
+        }
+         print("解析成功")
+        completionHandler(self.feedInfo,self.feedItems,nil)
+    }
+    
+    func convertRSS1Type(xmlDoc : Ji! ,completionHandler: (FeedInfo?, [FeedItem]?, NSError?) -> Void) {
+        let channel = xmlDoc?.rootNode?.firstChildWithName("rdf:RDF")
+        let children = channel?.childrenWithName("item")
+        
+        let feedInfo = FeedInfo()
+        feedInfo.title = channel?.firstChildWithName("title")?.content
+        feedInfo.feedDescription = channel?.firstChildWithName("description")?.content
+        feedInfo.link = channel?.firstChildWithName("link")?.content
+        feedInfo.language = channel?.firstChildWithName("language")?.content
+        feedInfo.lastBuildDate = channel?.firstChildWithName("lastBuildDate")?.content
+        feedInfo.pubDate = channel?.firstChildWithName("pubDate")?.content
+        feedInfo.copyright = channel?.firstChildWithName("copyright")?.content
+        feedInfo.webMaster = channel?.firstChildWithName("webMaster")?.content
+        feedInfo.managingEditor = channel?.firstChildWithName("managingEditor")?.content
+        
+        self.feedInfo = feedInfo
+        
+        for node:JiNode in children! {
+            let feedItem = FeedItem()
+            feedItem.title = node.firstChildWithName("title")?.content
+            feedItem.feedItemDescription = node.firstChildWithName("description")?.content
+            feedItem.author = node.firstChildWithName("author")?.content
+            feedItem.pubDate = node.firstChildWithName("pubDate")?.content
+            feedItem.link = node.firstChildWithName("link")?.content
+            feedItem.guid = node.firstChildWithName("guid")?.content
+            feedItem.category = node.firstChildWithName("category")?.content
+            self.feedItems.append(feedItem)
+        }
+        print("解析成功")
+        completionHandler(self.feedInfo,self.feedItems,nil)
+    }
+    
+    func convertAtomType(xmlDoc : Ji! ,completionHandler: (FeedInfo?, [FeedItem]?, NSError?) -> Void) {
+        //let feed = xmlDoc?.rootNode?.firstChild
+        let children:[JiNode]? = xmlDoc?.rootNode?.childrenWithName("entry")
+
+        
+        let feedInfo = FeedInfo()
+        feedInfo.updated = xmlDoc?.rootNode?.firstChildWithName("updated")?.content
+        feedInfo.title = xmlDoc?.rootNode?.firstChildWithName("title")?.content
+        feedInfo.subtitle = xmlDoc?.rootNode?.firstChildWithName("subtitle")?.content
+        feedInfo.feedDescription = xmlDoc?.rootNode?.firstChildWithName("description")?.content
+        feedInfo.link = xmlDoc?.rootNode?.firstChildWithName("link")?.content
+        feedInfo.managingEditor = xmlDoc?.rootNode?.firstChildWithName("author")?.firstChildWithName("email")?.content
+        feedInfo.author = xmlDoc?.rootNode?.firstChildWithName("author")?.firstChildWithName("name")?.content
+        self.feedInfo = feedInfo
+        
+        for node:JiNode in children! where children?.count > 0 {
+            let feedItem = FeedItem()
+            feedItem.title = node.firstChildWithName("title")?.content
+            feedItem.summary = node.firstChildWithName("summary")?.content
+            feedItem.author = node.firstChildWithName("contributor")?.firstChildWithName("name")?.content
+            feedItem.pubDate = node.firstChildWithName("published")?.content
+            feedItem.updated = node.firstChildWithName("updated")?.content
+            feedItem.link = node.firstChildWithName("link")?.content
+            feedItem.guid = node.firstChildWithName("id")?.content
+            feedItem.category = node.firstChildWithName("category")?.content
+            feedItem.content = node.firstChildWithName("content")?.content
+            self.feedItems.append(feedItem)
+        }
+        print("解析成功")
+        completionHandler(self.feedInfo,self.feedItems,nil)
+    }
+    
+    func convertUnknownEncoding(data : NSData!,encodingName :String?) ->NSData? {
+        
+        var string:NSString?
         var nsEncoding:UInt = 0
         
-        
-        if let encoding:String = encodingName {
-            let cfEncoding:CFStringEncoding = CFStringConvertIANACharSetNameToEncoding(encoding as CFString)
+        if ((encodingName?.isEmpty) != nil) {
+            let cfEncoding:CFStringEncoding = CFStringConvertIANACharSetNameToEncoding(encodingName as! CFString)
             
             if cfEncoding != kCFStringEncodingInvalidId {
                 nsEncoding = CFStringConvertEncodingToNSStringEncoding(cfEncoding)
@@ -154,7 +273,7 @@ class PlatinumBlue: NSObject,NSURLSessionDelegate {
         }
         
         if ((string?.length) != nil) {
-            if (string!.hasPrefix("?xml")) {
+            if (string!.hasPrefix("<?xml")) {
                 let a = string?.rangeOfString("?>")
                 if a?.location != NSNotFound {
                     let xlmDec:NSString = NSString(string: (string?.substringToIndex((a?.location)!))!)
